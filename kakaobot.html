@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+  <script>
+    //function response(room, msg, sender, isGroupChat, replier, ImageDB) {
+    var msg = "이름아~ 날씨좀 알려줄래?";
+    var response;
+
+
+    var botName = "이름";
+    if(msg.substring(0, botName.length) == botName){
+        if(msg.indexOf("하이") != -1){
+          response = "ㅎㅇㅎㅇ";
+        } else if(msg.indexOf("날씨") != -1){
+          var data=Jsoup.connect("https://search.naver.com/search.naver?query=실시간%20검색어").get().select("span.tit")+"";
+          response = data;
+
+          //alert("check");
+        }
+
+    }
+
+
+
+    //alert(response);
+
+
+        //replier.reply("총 복무일 : "+total+"일\n현재 복무일 : "+current+"일\n남은 복무일 : "+remaining+"일\n복무율 : "+percent.toFixed(1)+"%");
+  </script>
+  <p>...After the script.</p>
+
+</body>
+
+</html>
